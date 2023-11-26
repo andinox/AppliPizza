@@ -1,0 +1,10 @@
+<h1>Pizza</h1>
+<a href="/ingredients/">Ingredient</a>
+<a href="/pizzas/">Pizzas</a>
+<ul>
+    {% for piz in pizzas %}
+        <li>{{ piz }} | <a href="/pizzas/{{piz.idPizza}}">détails</a></li>
+    {% endfor %}
+</ul>
+
+

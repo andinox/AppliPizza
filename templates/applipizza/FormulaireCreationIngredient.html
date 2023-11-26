@@ -1,0 +1,11 @@
+<h2>Création d'un ingrédient</h2>
+{% block main %}
+<form action="#" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="idIngredient">Nom de l'ingrédient</label>
+        <input  type="text" name="nomIngredient" maxlength="50" required id="idIngredient">
+    </div>
+    <button type="submit">Envoyer</button>
+</form>
+{% endblock %}

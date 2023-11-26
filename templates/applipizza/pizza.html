@@ -1,0 +1,32 @@
+<h1>{{ pizza }}</h1>
+
+<h1> Ingredients </h1>
+
+<ul>
+    {% for ingredient in  ingredients %}
+        <li>{{ ingredient }}</li>
+    {% endfor %}
+</ul>
+
+{% if not ingredients.values_list %}
+    <p> la pizza n'a pas encore d'ingrédient ! </p>
+{% endif %}
+
+<h1> Ajouter un ingrédient  </h1>
+
+{% block main %}
+<form action="#" method="post">
+    {% csrf_token %}
+    <div>
+        <label for="idIngredient">Nom de l'ingrédient</label>
+        <select name="ingredient" required id="idIngredient">
+            <option selected disabled>Choisissez</option>
+            {% for ing in IngredientsM %}
+                <option value="{{ ing.idIngredient }}">{{ ing.nomIngredient }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit">Envoyer</button>
+</form>
+{% endblock %}
+
