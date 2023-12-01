@@ -1,6 +1,10 @@
 body {
   margin: 0;
   height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 header {
@@ -10,7 +14,7 @@ header {
   justify-content: space-between;
   margin-top: 5px;
   height: 10vh;
-  width: 100vw;
+  width: 90vw;
 }
 header .logo {
   justify-self: flex-start !important;
