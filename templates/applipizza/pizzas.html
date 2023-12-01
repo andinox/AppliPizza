@@ -3,7 +3,11 @@
 <a href="/pizzas/">Pizzas</a>
 <ul>
     {% for piz in pizzas %}
-        <li>{{ piz }} | <a href="/pizzas/{{piz.idPizza}}">détails</a></li>
+        <li>{{ piz }} |
+            <a href="/pizzas/{{piz.idPizza}}">détails</a> |
+            <a href="/pizzas/{{piz.idPizza}}/delete">supprimer</a> |
+            <a href="/pizzas/{{piz.idPizza}}/update">modifier</a>
+        </li>
     {% endfor %}
 </ul>
 

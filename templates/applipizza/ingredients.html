@@ -2,7 +2,9 @@
 <a href="/ingredients/">Ingredient</a>
 <a href="/pizzas/">Pizzas</a>
 <ul>
-    {% for piz in ingredients %}
-        <li>{{ piz }}</li>
+    {% for ing in ingredients %}
+        <li>{{ ing }} |
+        <a href="/ingredients/{{ ing.idIngredient }}/delete">delete</a>
+        </li>
     {% endfor %}
 </ul>

@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100vw;
+}
+header .logo {
+  justify-self: flex-start !important;
+  align-items: center;
+  position: relative;
+  display: flex;
+}
+header .logo img {
+  width: 50px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+header .logo p {
+  cursor: auto;
+  user-select: none;
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
+  margin: 0;
+}
+header .logo p::first-line {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+header .connect {
+  margin-right: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+header .connect :first-child {
+  margin-right: 25px;
+}
+header .connect button {
+  margin-right: 50px;
+  border: none;
+  background-color: white;
+}
+header .connect button:active {
+  color: white;
+}
+header .connect * {
+  font-size: 1.2rem;
+}
+header .connect .bi-person-circle {
+  font-size: 1.6rem;
+}
+header .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+header .menu div > :first-child {
+  margin-right: 5px;
+}
+header .menu > * {
+  margin-right: 50px;
+}
+header .menu p {
+  font-family: "Inter", serif;
+  margin-right: 0;
+}
+header .menu div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+header .menu div p {
+  margin-right: 5px;
+  word-break: keep-all;
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+header .menu div::after {
+  content: "";
+  position: absolute;
+  height: 1%;
+  width: 10px;
+  background: black;
+  bottom: 0%;
+  transition: 400ms;
+}
+header .menu div:hover::after {
+  width: 90%;
+  transition: 400ms;
+}
+
+/*# sourceMappingURL=style.css.map */

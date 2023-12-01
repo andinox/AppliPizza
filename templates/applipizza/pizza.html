@@ -18,13 +18,15 @@
 <form action="#" method="post">
     {% csrf_token %}
     <div>
-        <label for="idIngredient">Nom de l'ingrédient</label>
-        <select name="ingredient" required id="idIngredient">
+        <label for="ingredient_id">Nom de l'ingrédient</label>
+        <select name="ingredient" required id="ingredient_id">
             <option selected disabled>Choisissez</option>
             {% for ing in IngredientsM %}
                 <option value="{{ ing.idIngredient }}">{{ ing.nomIngredient }}</option>
             {% endfor %}
         </select>
+        <label for="quantity">Quantité</label>
+        <input type="text" name="quantity" maxlength="50" required id="quantity">
     </div>
     <button type="submit">Envoyer</button>
 </form>

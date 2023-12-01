@@ -8,7 +8,16 @@ class IngredientForm(ModelForm):
         model = Ingredient
         fields = ['nomIngredient']
 
+
 class PizzaForm(ModelForm):
     class Meta:
         model = Pizza
         fields = ['idPizza', 'nomPizza', 'prix']
+
+
+class CompositionForm(ModelForm):
+
+    class Meta:
+        model = Composition
+        fields = ['ingredient', 'quantity']
+

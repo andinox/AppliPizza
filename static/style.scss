@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  height: 100vh;
+}
+
+@mixin flex_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  @include flex_center;
+  justify-content: space-between;
+  height: 10vh;
+  width: 100vw;
+
+  & .logo {
+    justify-self: flex-start !important;
+    align-items: center;
+    position: relative;
+    display: flex;
+    & img {
+      width: 50px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+    & p {
+      cursor: auto;
+      user-select: none;
+      font-family: Inter, sans-serif;
+      font-size: 0.8rem;
+      margin: 0;
+
+      &::first-line {
+        font-weight: 900;
+        font-size: 1.5rem;
+
+      }
+    }
+  }
+
+  & .connect {
+    margin-right: 40px;
+    @include flex_center;
+    cursor: pointer;
+    user-select: none;
+
+    & :first-child {
+      margin-right: 25px;
+
+    }
+
+    & button {
+      margin-right: 50px;
+      border: none;
+      background-color: white;
+
+      &:active {
+        color: white;
+      }
+    }
+
+    & * {
+      font-size: 1.2rem;
+    }
+
+    & .bi-person-circle {
+      font-size: 1.6rem;
+    }
+
+  }
+
+
+
+  & .menu {
+    @include flex_center;
+    width: 50%;
+
+    & div > :first-child {
+      margin-right: 5px;
+    }
+    & > * {
+      margin-right: 50px;
+    }
+
+    & p {
+      font-family: "Inter", serif;
+      margin-right: 0;
+    }
+
+    & div {
+      @include flex_center;
+      position: relative;
+      user-select: none;
+      cursor: pointer;
+
+      & p {
+        margin-right: 5px;
+        word-break: keep-all;
+        font-size: 0.8rem;
+        font-weight: lighter;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1%;
+        width: 10px;
+        background: black;
+        bottom: 0%;
+        transition: 400ms;
+      }
+
+     &:hover {
+        &::after {
+          width: 90%;
+          transition: 400ms;
+        }
+      }
+
+    }
+
+  }
+}
+
+.section_1 {
+
+}
