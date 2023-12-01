@@ -170,4 +170,5 @@ def home(request):
     return render(
         request,
         'applipizza/home.html',
+        {'t' : 'test'}
     )

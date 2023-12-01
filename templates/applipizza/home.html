@@ -1,14 +1,47 @@
 {% load static %}
-<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Pizza de la Nico</title>
-    <link rel="stylesheet" href="{% static '/home.css' %}">
-</head>
-<body>
-    <header class="header">
-
-    </header>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>site de try</title>
+        <link rel="stylesheet" href="{% static 'css/homeCSS/header.css' %}">
+        <link rel="stylesheet" href="{% static 'css/homeCSS/body.css' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="{% static 'logo.svg' %}" alt="">
+                <p>PIZZA<br>D'EL NICO</p>
+            </div>
+            <div class="menu">
+                <div><p>Home</p></div>
+                <div><p>Nos Pizzas</p> </div>
+                <div><p>Nos Ingredients</p> </div>
+            </div>
+            <div class="connect">
+                <i class="bi bi-cart"></i>
+                <i class="bi bi-person-circle"></i>
+            </div>
+        </header>
+        <section class="fsection">
+            <div class="parent">
+                <div class="div1">
+                    <h1>
+                        Pizze <br> Di Qualità
+                    </h1>
+                    <div>
+                        <img src="{% static 'image/pizzaQ.png' %}" alt="" srcset="">
+                    </div>
+                </div>
+                <div class="div2"> </div>
+                <div class="div3"> </div>
+                <div class="div4"> </div>
+                </div>
+        </section>
+    </body>
 </html>
+
+
