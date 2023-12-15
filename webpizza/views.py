@@ -19,7 +19,7 @@ def pizzas(request):
 
 def ingredients(request):
     lesIngredients = Ingredient.objects.all()
-
+    #testcicd
     return render(
         request,
         'applipizza/ingredients.html',
