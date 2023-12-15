@@ -3,8 +3,8 @@ from django.db import models
 
 class Ingredient(models.Model):
     idIngredient = models.AutoField(primary_key=True)
-
     nomIngredient = models.CharField(max_length=50, verbose_name='nom de l\'ingrédient')
+    imageIng = models.ImageField(upload_to='images/', null=True, blank=True)
 
     def __str__(self) -> str:
         return self.nomIngredient
@@ -14,9 +14,9 @@ class Pizza(models.Model):
     idPizza = models.AutoField(primary_key=True)
     nomPizza = models.CharField(max_length=50, verbose_name='nom de la pizza')
     prix = models.DecimalField(max_digits=50, decimal_places=2, verbose_name='prix de la pizza')
-    image = models.ImageField(upload_to='images/', null=True, blank=True)
+    imagePizza = models.ImageField(upload_to='images/', null=True, blank=True)
     def __str__(self) -> str:
-        return 'pizza' + self.nomPizza + ' ( prix : ' + str(self.prix) + ' €)'
+        return self.nomPizza + ' ( prix : ' + str(self.prix) + ' €)'
 
 
 class Composition(models.Model):

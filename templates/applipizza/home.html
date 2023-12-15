@@ -11,21 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <div class="logo">
-                <img src="{% static 'logo.svg' %}" alt="">
-                <p>PIZZA<br>D'EL NICO</p>
-            </div>
-            <div class="menu">
-                <div><p>Home</p></div>
-                <div><p>Nos Pizzas</p> </div>
-                <div><p>Nos Ingredients</p> </div>
-            </div>
-            <div class="connect">
-                <i class="bi bi-cart"></i>
-                <i class="bi bi-person-circle"></i>
-            </div>
-        </header>
+        {% include 'applipizza/header.html' %}
         <section class="fsection">
             <div class="parent">
                 <div class="div1">
@@ -38,14 +24,13 @@
                     </div>
                 </div>
                 <div class="div2">
-                    <img src="{% static 'image/vegetables.jpg' %}" alt="" srcset="">
                     <div>
-                        <h1>All Ingredient <br>Are Bio !</h1>
-                        <div>Show Now</div>
+                        <h1>All Ingredient <br>All Bio !</h1>
+                        <div class="show_ingre"><p>SHOW NOW</p></div>
                     </div>
+                    <img src="{% static 'image/vegetable.png' %}" alt="" srcset="">
                 </div>
                 <div class="div3"> </div>
-                <div class="div4"> </div>
                 </div>
         </section>
     </body>

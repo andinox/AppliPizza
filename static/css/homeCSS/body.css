@@ -83,26 +83,51 @@
 
 .div2 { 
     grid-area: 1 / 2 / 3 / 4; 
-    background-color: #bbd0ff;
+    background-color: #e9edc9;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.div2 > div {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
 
 .div2 > img {
     width: 50%;
 }
 
-.div2 img {
+.div2 h1 {
+    font-family: 'Inter';
+}
 
+
+
+.show_ingre {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: green;
+    cursor: pointer;
+    aspect-ratio: 2/1;
+    width: 70%;
+    font-size: 90%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.show_ingre p {
+    user-select: none;
+    margin: 0;
+    font-weight: 800;
+    font-family: "Inter";
+    color: white;
 }
 
 .div3 { 
-    grid-area: 3 / 2 / 4 / 3; 
+    grid-area: 3 / 2 / 4 / 4; 
     background-color: blue;     
-}
-
-.div4 { 
-    grid-area: 3 / 3 / 4 / 4; 
-    background-color: black;
 }

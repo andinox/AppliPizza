@@ -1,34 +1,90 @@
-<h1>{{ pizza }}</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <title>Votre Titre</title>
+</head>
+<body>
 
-<h1> Ingredients </h1>
+<div class="container mt-5">
+    <h1 class="display-4">{{ pizza }}</h1>
 
-<ul>
-    {% for ingredient in  ingredients %}
-        <li>{{ ingredient }}</li>
-    {% endfor %}
-</ul>
-
-{% if not ingredients.values_list %}
-    <p> la pizza n'a pas encore d'ingrédient ! </p>
-{% endif %}
-
-<h1> Ajouter un ingrédient  </h1>
-
-{% block main %}
-<form action="#" method="post">
-    {% csrf_token %}
-    <div>
-        <label for="ingredient_id">Nom de l'ingrédient</label>
-        <select name="ingredient" required id="ingredient_id">
-            <option selected disabled>Choisissez</option>
-            {% for ing in IngredientsM %}
-                <option value="{{ ing.idIngredient }}">{{ ing.nomIngredient }}</option>
+    <h2 class="mt-4">Ingrédients</h2>
+    {% if ingredients %}
+        <table class="table table-bordered mt-4">
+        <thead>
+            <tr>
+                <th>Nom de l'ingrédient</th>
+                <th>Quantité</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for ingredient in ingredients %}
+                <tr>
+                    <td>{{ ingredient.nom }}</td>
+                    <td>{{ ingredient.quantity }}</td>
+                    <td>
+                        <form enctype="multipart/form-data" action="deleteIngredient" method="post">
+                        {% csrf_token %}
+                        <div style="display: none">
+                            <label for="idIngredient" class="form-label">Nom de l'ingrédient</label>
+                            <input type="text" name="nomIngredient" maxlength="50" required id="idIngredient" value="{{ ingredient.nom }}" class="form-control">
+                        </div>
+                        <div style="display: none">
+                            <label for="id_image" class="form-label">Image de l'ingredient</label>
+                            <input type="file" accept="image/*" name="imageIng" id="id_image" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
             {% endfor %}
-        </select>
-        <label for="quantity">Quantité</label>
-        <input type="text" name="quantity" maxlength="50" required id="quantity">
+        </tbody>
+        </table>
+    {% endif %}
+
+
+
+    {% if not ingredients %}
+        <p class="mt-3">La pizza n'a pas encore d'ingrédient !</p>
+    {% endif %}
+
+    <h2 class="mt-4">Ajouter un ingrédient</h2>
+
+    <div class="row">
+        <div class="col-md-6">
+            {% block main %}
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="ingredient_id">Nom de l'ingrédient</label>
+                    <select class="form-control" name="ingredient" required id="ingredient_id">
+                        <option selected disabled>Choisissez</option>
+                        {% for ing in IngredientsM %}
+                            <option value="{{ ing.idIngredient }}">{{ ing.nomIngredient }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantité</label>
+                    <input type="text" class="form-control" name="quantity" maxlength="50" required id="quantity">
+                </div>
+                <button type="submit" class="btn btn-primary">Envoyer</button>
+            </form>
+            {% endblock %}
+        </div>
     </div>
-    <button type="submit">Envoyer</button>
-</form>
-{% endblock %}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
 

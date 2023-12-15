@@ -1,0 +1,18 @@
+{% load static %}
+<header>
+            <div class="logo">
+                <img src="{% static 'logo.svg' %}" alt="">
+                <p>PIZZA<br>D'EL NICO</p>
+            </div>
+            <div class="menu">
+                <div><a href="/home/" >Home</a></div>
+                <div><a href="/pizzas/" >Nos Pizzas</a> </div>
+                <div><a href="/ingredients/" >Nos Ingredients</a> </div>
+            </div>
+            <div class="connect">
+                <i class="bi bi-cart"></i>
+                <form method="get" action="/login/"  style="margin: 0">
+                    <button type="submit"><i class="bi bi-person-circle" ></i></button>
+                </form>
+            </div>
+</header>

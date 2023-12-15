@@ -1,13 +1,35 @@
-<h2>Modification d'une Pizza</h2>
-{% block main %}
-<form action="#" method="post">
-    {% csrf_token %}
-    <div>
-        <label for="nomPizza">Nom de la pizza</label>
-        <input  type="text" name="nomPizza" maxlength="50" required id="nomPizza" value="{{ pizza }}">
-        <label for="prix">Prix de la pizza</label>
-        <input  type="number" step="0.01" name="prix" min="0" max="1000" required id="prix" value="{{ prix }}">
-    </div>
-    <button type="submit">Envoyer</button>
-</form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Votre Titre</title>
+</head>
+<body>
+
+<div class="container mt-5">
+    <h2>Modification d'une Pizza</h2>
+    <form action="#" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="nomPizza">Nom de la pizza</label>
+            <input type="text" class="form-control" name="nomPizza" maxlength="50" required id="nomPizza" value="{{ pizza }}">
+        </div>
+        <div class="form-group">
+            <label for="prix">Prix de la pizza</label>
+            <input type="number" step="0.01" class="form-control" name="prix" min="0" max="1000" required id="prix" value="{{ prix }}">
+        </div>
+        <div class="form-group">
+            <label for="imagePizza">Image de la pizza</label>
+            <input type="file" class="form-control-file" accept="image/*" name="imagePizza">
+        </div>
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

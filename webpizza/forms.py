@@ -6,13 +6,13 @@ from webpizza.models import Pizza, Ingredient, Composition
 class IngredientForm(ModelForm):
     class Meta:
         model = Ingredient
-        fields = ['nomIngredient']
+        fields = ['nomIngredient','imageIng']
 
 
 class PizzaForm(ModelForm):
     class Meta:
         model = Pizza
-        fields = ['idPizza', 'nomPizza', 'prix']
+        fields = ['idPizza', 'nomPizza', 'prix','imagePizza']
 
 
 class CompositionForm(ModelForm):

@@ -1,10 +1,37 @@
-<h1>Ingredient</h1>
-<a href="/ingredients/">Ingredient</a>
-<a href="/pizzas/">Pizzas</a>
-<ul>
-    {% for ing in ingredients %}
-        <li>{{ ing }} |
-        <a href="/ingredients/{{ ing.idIngredient }}/delete">delete</a>
-        </li>
-    {% endfor %}
-</ul>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>site de try</title>
+        <link rel="stylesheet" href="{% static 'css/homeCSS/header.css' %}">
+        <link rel="stylesheet" href="{% static 'css/ingredient/style.scss' %}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    {% include 'applipizza/header.html' %}
+    <h1 class="title">Ingredient</h1>
+
+    <section class="IngredientContainer">
+        {% for ing in ingredients %}
+            <div class="Ingredient">
+                <div>
+                <img src="{{ MEDIA_URL }}{{ ing.imageIng }}" alt="">
+                </div>
+                <h1 class="">{{ ing.nomIngredient }}</h1>
+                <div class="edit" >
+                    <form action="/ingredients/{{ ing.idIngredient }}/update" method="get">
+                        <button class="edit-ing" type="submit"><i class="bi bi-pencil-fill"></i></button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+    <form action="/ingredients/add" method="get">
+        <button class="add" type="submit"><h1>+</h1></button>
+    </form>
+    </body>
+</html>
+
