@@ -25,7 +25,7 @@ def connexion(request):
         lesPizzas = Pizza.objects.all()
         return render(
             request,
-            'applipizza/pizzas.html',
+            'applipizza/debasepizzas.html',
             {'pizzas': lesPizzas, 'user': user}
         )
     else:
@@ -77,7 +77,7 @@ def traitementFormulaireInscription(request):
     # on renvoie l'appel du template, avec les pizzas et le PizzaUser
     return render(
         request,
-        'applipizza/pizzas.html',
+        'applipizza/debasepizzas.html',
         {
             "pizzas": lesPizzas,
             "user": user,

@@ -1,0 +1,17 @@
+{%  load tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    {%  tailwind_css %}
+    <title>Votre Titre</title>
+</head>
+<body>
+    {%  include 'applipizza/header.html' %}
+    {% block main %}{% endblock %}
+    {%  include 'applipizza/footer.html' %}
+</body>
+</html>
